@@ -218,7 +218,7 @@ const Projects = props => {
 
     const [projects, setProjects] = useState([]);
 
-  const projsToShow = ["FPS_ShooterWebsite", "FPS_ShooterLauncher"]
+  const projsToShow = ["FPS_ShooterWebsite", "FPS_ShooterLauncher", "MyPortfolio"]
 
 // const projsToShow = ["FPSShooter", "FPS_ShooterWebsite", "FPS_ShooterLauncher",
 // "NGOHub", "GreenMark", "Thriving_Villages", "MeetYeetBuild", "meetYeetLauncher",
