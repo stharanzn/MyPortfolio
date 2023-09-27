@@ -13,7 +13,8 @@ export default function Languages(prop) {
           });
           if (response.ok) {
             const data = await response.json();    
-            const objData = Object.keys(data);              
+            const objData = Object.keys(data);   
+            
             
             setLangs(objData);            
               
@@ -31,7 +32,7 @@ export default function Languages(prop) {
             <ul class="tech">
             {langs.map((item, index)=>{ 
                 return(               
-                <li>{item}</li>
+                <li key={index}>{item}</li>
                 )
             })}
             </ul>

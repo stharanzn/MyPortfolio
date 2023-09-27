@@ -218,7 +218,7 @@ const Projects = props => {
 
     const [projects, setProjects] = useState([]);
 
-  const projsToShow = ["FPS_ShooterWebsite", "FPS_ShooterLauncher", "MyPortfolio"]
+  const projsToShow = ["FPS_ShooterWebsite", "FPS_ShooterLauncher", "MyPortfolio", "NGOHub", "GreenMark", "meetYeetLauncher", "PongGame"]
 
 // const projsToShow = ["FPSShooter", "FPS_ShooterWebsite", "FPS_ShooterLauncher",
 // "NGOHub", "GreenMark", "Thriving_Villages", "MeetYeetBuild", "meetYeetLauncher",
@@ -230,16 +230,28 @@ const Projects = props => {
 
     const fetchProjects = async () => {
       try {
-        const response = await fetch('https://api.github.com/users/stharanzn/repos', {
-        });
-        if (response.ok) {
-          const data = await response.json();          
-                    
-          setProjects(data);  
-            
-        } else {
-          console.error('Failed to fetch project data');
+        var storedData = JSON.parse(window.sessionStorage.getItem("storedData"));
+        if(storedData !== null){
+          console.log("data found");
+          console.log(storedData);
+          setProjects(storedData);
+        }else{
+          console.log("sending fetch request")
+            const response = await fetch('https://api.github.com/users/stharanzn/repos', {
+            });
+            if (response.ok) {
+                console.log("fetching projects data");
+                const data = await response.json(); 
+                window.sessionStorage.setItem("storedData", JSON.stringify(data));         
+                console.log(data)
+                setProjects(data);  
+                  
+            }else {
+                console.error('Failed to fetch project data');
+            }
         }
+
+        
       } catch (error) {
         console.error('Error:', error);
       }
@@ -273,9 +285,9 @@ const Projects = props => {
           return (
 
             <>
-                <div class="project">
+                <div class="project" key={index}>
         <a class="project-link" href={item.html_url} target="_blank" rel="noopener noreferrer">
-          <img class="project-image" src={`https://raw.githubusercontent.com/${item.full_name}/main/ProjectImage.png`} alt="project logo"/></a>
+          <img class="project-image" src={`https://raw.githubusercontent.com/${item.full_name}/${item.default_branch}/ProjectImage.png`} alt="project logo"/></a>
           <div class="project-details">
             <div class="project-tile">
               <p class="icons">
