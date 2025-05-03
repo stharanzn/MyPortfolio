@@ -8,11 +8,11 @@ export default function ProjectCard({
                                     }) {
 
     return (
-        <div className="game-card bg-slate-800 rounded-xl overflow-hidden border border-slate-700">
-            <div className={`h-48 bg-gradient-to-br from-purple-600 to-indigo-800 relative overflow-hidden`}>
+        <div className="game-card bg-[rgb(41,37,36)] rounded-xl overflow-hidden border border-stone-700">
+            <div className={`h-48 bg-gradient-to-br from-red-600 to-amber-800 relative overflow-hidden`}>
                 <div className="absolute inset-0 flex items-center justify-center">
                     {/*<PlayCircle className="h-20 w-20 text-white/80" />*/}
-                    <img className="project-image"
+                    <img className="project-image w-full h-full"
                          src={`https://raw.githubusercontent.com/${projectData.full_name}/${projectData.default_branch}/ProjectImage.png`}
                          alt="project logo"/>
                 </div>
@@ -22,11 +22,11 @@ export default function ProjectCard({
             </div>
             <div className="p-6">
                 <h3 className="text-xl font-bold text-white mb-2 game-title">{projectData.name}</h3>
-                <p className="text-slate-400 mb-4">{projectData.description}</p>
+                <p className="text-stone-400 mb-4">{projectData.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                     <Languages prop={{"repoName": projectData.name}}/>
                     {/*        {tags.map((tag, idx) => (*/}
-                    {/*            <span key={idx} className="text-xs bg-purple-900/50 text-purple-300 px-2 py-1 rounded">*/}
+                    {/*            <span key={idx} className="text-xs bg-red-900/50 text-red-300 px-2 py-1 rounded">*/}
                     {/*  {tag}*/}
                     {/*</span>*/}
                     {/*        ))}*/}
@@ -34,7 +34,7 @@ export default function ProjectCard({
                 <a href={projectData.html_url}
                    target="_blank"
                    rel="noopener noreferrer"
-                   className="view-project text-sm text-purple-400 hover:text-purple-300 font-medium flex items-center"
+                   className="view-project text-sm text-red-400 hover:text-red-300 font-medium flex items-center"
                    data-id={dataId}>
                     View Github Repo
                     <ArrowRight className="h-4 w-4 ml-1"/>

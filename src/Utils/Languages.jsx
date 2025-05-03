@@ -30,7 +30,7 @@ export default function Languages(prop) {
 
             {langs.map((item, index) => {
                 return (
-                    <span key={index} className="text-xs bg-purple-900/50 text-purple-300 px-2 py-1 rounded">{item}</span>
+                    <span key={index} className="text-xs bg-red-900/50 text-white-300 px-2 py-1 rounded">{item}</span>
                 )
             })}
         </>

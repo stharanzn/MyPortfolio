@@ -8,8 +8,8 @@ const projectsData = [
         description: "A space exploration RPG with procedurally generated planets and an epic storyline spanning multiple galaxies.",
         tags: ["Unity", "C#", "3D"],
         category: "RPG",
-        gradientFrom: "purple-600",
-        gradientTo: "indigo-800",
+        gradientFrom: "red-600",
+        gradientTo: "amber-800",
         engine: "Unity",
         dataId: "game1"
     },
@@ -18,7 +18,7 @@ const projectsData = [
         description: "A mind-bending puzzle game where players manipulate time to solve increasingly complex challenges.",
         tags: ["Unreal Engine", "C++", "2D"],
         category: "Puzzle",
-        gradientFrom: "indigo-600",
+        gradientFrom: "yellow-600",
         gradientTo: "blue-800",
         engine: "Unreal",
         dataId: "game2"
@@ -29,7 +29,7 @@ const projectsData = [
         tags: ["Godot", "GDScript", "2.5D"],
         category: "Action",
         gradientFrom: "pink-600",
-        gradientTo: "purple-800",
+        gradientTo: "red-800",
         engine: "Godot",
         dataId: "game3"
     },
@@ -38,7 +38,7 @@ const projectsData = [
         description: "A fast-paced action game with stealth mechanics and a dark, atmospheric world to explore.",
         tags: ["Godot", "GDScript", "2.5D"],
         category: "Action",
-        gradientFrom: "indigo-600",
+        gradientFrom: "yellow-600",
         gradientTo: "blue-800",
         engine: "Godot",
         dataId: "game3"
@@ -49,7 +49,7 @@ const projectsData = [
         tags: ["Godot", "GDScript", "2.5D"],
         category: "Action",
         gradientFrom: "pink-600",
-        gradientTo: "purple-800",
+        gradientTo: "red-800",
         engine: "Godot",
         dataId: "game3"
     }
@@ -165,13 +165,13 @@ export default function ProjectsSection() {
     const selectedProject = selectedProjectId ? projectDetails[selectedProjectId] : null;
 
     return (
-        <section id="projects" className="py-20 px-4 bg-slate-900/50 relative">
+        <section id="projects" className="py-20 px-4 bg-stone-900/50 relative">
             <div className="container mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold game-title mb-4">
-                        Featured <span className="text-purple-500">Projects</span>
+                        Featured <span className="text-amber-500">Projects</span>
                     </h2>
-                    <p className="text-slate-400 max-w-2xl mx-auto">
+                    <p className="text-stone-400 max-w-2xl mx-auto">
                         Explore my portfolio of games and interactive experiences that push the boundaries of gameplay
                         and storytelling.
                     </p>
@@ -195,14 +195,14 @@ export default function ProjectsSection() {
                     {visibleCount < projectsData.length ? (
                         <button
                             onClick={handleLoadMore}
-                            className="px-8 py-3 rounded-lg font-medium text-white border border-purple-400 hover:bg-yellow-400/20 transition duration-300"
+                            className="px-8 py-3 rounded-lg font-medium text-white border border-amber-400 hover:bg-amber-400/20 hover:border-amber-400/20 transition duration-300"
                         >
                             Load More Projects
                         </button>
                     ) : (
                         <button
                             onClick={handleHideProjects}
-                            className="px-8 py-3 rounded-lg font-medium text-white border border-red-500 hover:bg-red-500/20 transition duration-300"
+                            className="px-8 py-3 rounded-lg font-medium text-white border border-amber-500 hover:bg-amber-500/20 hover:border-amber-400/20 transition duration-300"
                         >
                             Hide Projects
                         </button>
@@ -218,7 +218,7 @@ export default function ProjectsSection() {
                          onClick={handleCloseModal}>
                         <div
                             className={clsx(
-                                "modal bg-slate-800 rounded-lg p-6 max-w-2xl w-full transform transition duration-300",
+                                "modal bg-stone-800 rounded-lg p-6 max-w-2xl w-full transform transition duration-300",
                                 selectedProject ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                             )}
                             onClick={(e) => e.stopPropagation()}
@@ -232,7 +232,7 @@ export default function ProjectsSection() {
 
                             <div className="mb-6">
                                 <div
-                                    className="h-64 bg-gradient-to-br from-red-600 to-yellow-500 rounded-lg mb-6 flex items-center justify-center">
+                                    className="h-64 bg-gradient-to-br from-red-600 to-amber-500 rounded-lg mb-6 flex items-center justify-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-24 w-24 text-white/80" fill="none"
                                          viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"
@@ -246,14 +246,14 @@ export default function ProjectsSection() {
                                 <span
                                     className="text-xs bg-red-900/50 text-red-300 px-2 py-1 rounded mr-2">{selectedProject.category}</span>
                                     <span
-                                        className="text-xs bg-yellow-900/50 text-yellow-300 px-2 py-1 rounded">{selectedProject.engine}</span>
+                                        className="text-xs bg-amber-900/50 text-amber-300 px-2 py-1 rounded">{selectedProject.engine}</span>
                                 </div>
-                                <p className="text-slate-300">{selectedProject.description}</p>
+                                <p className="text-stone-300">{selectedProject.description}</p>
                             </div>
 
                             <div className="mb-6">
                                 <h3 className="text-lg font-bold text-white mb-3">Key Features</h3>
-                                <ul className="list-disc pl-5 text-slate-300 space-y-1">
+                                <ul className="list-disc pl-5 text-stone-300 space-y-1">
                                     {selectedProject.features.map((feature, i) => (
                                         <li key={i}>{feature}</li>
                                     ))}
@@ -265,7 +265,7 @@ export default function ProjectsSection() {
                                 <div className="flex flex-wrap gap-2">
                                     {selectedProject.technologies.map((tech, i) => (
                                         <span key={i}
-                                              className="text-xs bg-slate-700 text-white px-2 py-1 rounded border border-slate-600">
+                                              className="text-xs bg-stone-700 text-white px-2 py-1 rounded border border-slate-600">
                     {tech}
                   </span>
                                     ))}

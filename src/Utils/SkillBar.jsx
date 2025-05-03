@@ -5,7 +5,7 @@ const SkillBar = ({ name, percent }) => {
         <div>
             <div className="flex justify-between mb-2">
                 <span className="text-white">{name}</span>
-                <span className="text-purple-400">{percent}%</span>
+                <span className="text-amber-400">{percent}%</span>
             </div>
             <div
                 className="skill-bar"

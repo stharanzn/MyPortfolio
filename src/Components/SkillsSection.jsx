@@ -10,13 +10,13 @@ import {
 
 const SkillsSection = () => {
     return (
-        <section id="skills" className="py-20 px-4 bg-slate-800/50">
+        <section id="skills" className="py-20 px-4 bg-stone-800/50">
             <div className="container mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold game-title mb-4">
-                        Technical <span className="text-purple-500">Skills</span>
+                        Technical <span className="text-amber-500">Skills</span>
                     </h2>
-                    <p className="text-slate-400 max-w-2xl mx-auto">
+                    <p className="text-stone-400 max-w-2xl mx-auto">
                         My expertise spans across various game development technologies and programming languages.
                     </p>
                 </div>

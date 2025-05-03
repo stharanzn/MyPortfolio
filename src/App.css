@@ -1,6 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #0f172a;
+    background-color: #1c0f0a;
     color: #e2e8f0;
     overflow-x: hidden;
 }
@@ -21,7 +21,7 @@ body {
     height: 2px;
     bottom: -2px;
     left: 0;
-    background-color: #8b5cf6;
+    background-color: #f39d0b;
     transition: width 0.3s ease;
 }
 
@@ -40,13 +40,13 @@ body {
 
 .game-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.4);
+    box-shadow: 0 10px 25px -5px rgb(237, 67, 67);
 }
 
 .skill-bar {
     height: 8px;
     border-radius: 4px;
-    background: linear-gradient(90deg, #8b5cf6 var(--percent), #1e293b var(--percent));
+    background: linear-gradient(90deg, #ed4343 var(--percent), #3d1d14 var(--percent));
 }
 
 .modal {
@@ -59,24 +59,25 @@ body {
 }
 
 .contact-input {
-    background-color: rgba(30, 41, 59, 0.8);
-    border: 1px solid #334155;
+    background-color: rgb(55, 28, 21);
+    border: 1px solid #7b2d12;
     transition: border-color 0.3s ease;
 }
 
 .contact-input:focus {
-    border-color: #8b5cf6;
+    border-color: #f2960f;
     outline: none;
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+    background: linear-gradient(135deg, #ee4642 0%, #f2970e 100%);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.5);
+    box-shadow: 0 5px 15px rgb(211, 67, 28);
+    border-color: #7b2d12;
 }
 
 .social-icon {
@@ -85,13 +86,13 @@ body {
 
 .social-icon:hover {
     transform: translateY(-3px);
-    color: #8b5cf6;
+    color: #ed4343;
 }
 
 .particle {
     position: absolute;
     border-radius: 50%;
-    background: rgba(139, 92, 246, 0.6);
+    background: rgb(237, 67, 67);
     pointer-events: none;
 }
 

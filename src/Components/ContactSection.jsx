@@ -21,27 +21,27 @@ const ContactSection = () => {
     };
 
     return (
-        <section id="contact" className="py-20 px-4 bg-slate-800/50">
+        <section id="contact" className="py-20 px-4 bg-stone-800/50">
             <div className="container mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold game-title mb-4">
-                        Get In <span className="text-purple-500">Touch</span>
+                        Get In <span className="text-amber-500">Touch</span>
                     </h2>
-                    <p className="text-slate-400 max-w-2xl mx-auto">
+                    <p className="text-stone-400 max-w-2xl mx-auto">
                         Have a project in mind or want to collaborate? I'd love to hear from you!
                     </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     {/* Contact Form */}
-                    <div className="bg-slate-900 rounded-xl p-8 border border-slate-700">
+                    <div className="bg-stone-900 rounded-xl p-8 border border-stone-700">
                         <h3 className="text-xl font-bold text-white mb-6 game-title">Send Me a Message</h3>
                         <form onSubmit={handleSubmit} className="space-y-6" id="contact-form">
                             {["name", "email", "subject", "message"].map((field) => (
                                 <div key={field}>
                                     <label
                                         htmlFor={field}
-                                        className="block text-sm font-medium text-slate-400 mb-2 capitalize"
+                                        className="block text-sm font-medium text-stone-400 mb-2 capitalize"
                                     >
                                         {field === "message" ? "Message" : `Your ${field}`}
                                     </label>
@@ -49,7 +49,7 @@ const ContactSection = () => {
                                         <textarea
                                             id={field}
                                             rows="5"
-                                            className="contact-input w-full px-4 py-3 rounded-lg text-white bg-slate-800 border border-slate-700"
+                                            className="contact-input w-full px-4 py-3 rounded-lg text-white bg-stone-800 border border-slate-700"
                                             placeholder="Tell me about your project..."
                                             value={form[field]}
                                             onChange={handleChange}
@@ -58,7 +58,7 @@ const ContactSection = () => {
                                         <input
                                             type={field === "email" ? "email" : "text"}
                                             id={field}
-                                            className="contact-input w-full px-4 py-3 rounded-lg text-white bg-slate-800 border border-slate-700"
+                                            className="contact-input w-full px-4 py-3 rounded-lg text-white bg-stone-800 border border-slate-700"
                                             placeholder={
                                                 field === "name"
                                                     ? "John Doe"
@@ -72,7 +72,7 @@ const ContactSection = () => {
                                     )}
                                 </div>
                             ))}
-                            <button type="submit" className="btn-primary w-full px-8 py-3 rounded-lg font-medium text-white bg-purple-600 hover:bg-purple-700">
+                            <button type="submit" className="btn-primary w-full px-8 py-3 rounded-lg font-medium text-white bg-red-600 hover:bg-red-700">
                                 Send Message
                             </button>
                         </form>
@@ -100,10 +100,10 @@ const ContactSection = () => {
                                 },
                             ].map((item, idx) => (
                                 <div className="flex items-start" key={idx}>
-                                    <div className="w-12 h-12 rounded-lg bg-purple-900/50 flex items-center justify-center mr-4 flex-shrink-0">
+                                    <div className="w-12 h-12 rounded-lg bg-red-900/50 flex items-center justify-center mr-4 flex-shrink-0">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
-                                            className="h-6 w-6 text-purple-400"
+                                            className="h-6 w-6 text-red-400"
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             stroke="currentColor"
@@ -113,7 +113,7 @@ const ContactSection = () => {
                                     </div>
                                     <div>
                                         <h4 className="text-white font-medium mb-1">{item.title}</h4>
-                                        <p className="text-slate-400">{item.value}</p>
+                                        <p className="text-stone-400">{item.value}</p>
                                     </div>
                                 </div>
                             ))}
