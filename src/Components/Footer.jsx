@@ -10,9 +10,6 @@ const Footer = () => {
                         <div className="flex items-center justify-center md:justify-start">
                             <div
                                 className="w-10 h-10 rounded-lg bg-gradient-to-br from-red-600 to-amber-600 flex items-center justify-center mr-3">
-                                {/*<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">*/}
-                                {/*    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 17l-5-5m0 0l5-5m-5 5h12" />*/}
-                                {/*</svg>*/}
                                 <img src={logo} alt="Logo"/>
                             </div>
                             <h1 className="text-xl font-bold game-title text-white">RANJAN <span

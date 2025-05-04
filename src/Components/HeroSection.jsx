@@ -7,7 +7,6 @@ const HeroSection = () => {
     function getExperienceLabel(startDate, currentDate = new Date()) {
         const start = new Date(startDate);
         const current = new Date(currentDate);
-        console.log(start, current);
 
         let years = current.getFullYear() - start.getFullYear();
         const hadAnniversary = (

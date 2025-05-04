@@ -50,11 +50,9 @@ const Navbar = () => {
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 bg-stone-900/90 backdrop-blur-md border-b border-stone-800">
             <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-                {/* Logo */}
                 <div className="flex items-center">
                     <div
                         className="w-10 h-10 rounded-lg bg-gradient-to-br from-red-600 to-amber-600 flex items-center justify-center mr-3">
-                        {/* Optional SVG icon */}
                         <img src={logo} alt="Logo"/>
                     </div>
                     <h1 className="text-xl font-bold text-white">

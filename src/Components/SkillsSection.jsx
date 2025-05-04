@@ -48,7 +48,6 @@ const SkillsSection = () => {
                     <SkillCard icon={<Gamepad2 size={48}/>} title="Game Development"/>
                     <SkillCard icon={<LaptopMinimal size={48}/>} title="Web Development"/>
                     <SkillCard icon={<FileQuestion size={48}/>} title="Problem Solving"/>
-                    {/*<SkillCard icon={<Smartphone size={48}/>} title="Mobile Development"/>*/}
                 </div>
             </div>
         </section>

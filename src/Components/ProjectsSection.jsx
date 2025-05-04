@@ -20,10 +20,8 @@ export default function ProjectsSection() {
                 if (storedData !== null && cacheData) {
                     setProjects(storedData);
                 } else {
-                    console.log("sending fetch request")
                     const response = await fetch('https://api.github.com/users/stharanzn/repos', {});
                     if (response.ok) {
-                        console.log("fetching projects data");
                         const data = await response.json();
                         let filteredProjects = [];
                         data.map((project) => {
