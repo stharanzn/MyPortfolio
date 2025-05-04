@@ -13,23 +13,23 @@ const Footer = () => {
                                 <img src={logo} alt="Logo"/>
                             </div>
                             <h1 className="text-xl font-bold game-title text-white">RANJAN <span
-                                className="text-red-500">SHRESTHA</span></h1>
+                                className="text-amber-500">SHRESTHA</span></h1>
                         </div>
                     </div>
 
-                    <div className="mb-6 md:mb-0">
-                        <div className="flex flex-wrap justify-center md:justify-center space-x-6">
-                            <a href="#home" className="text-stone-400 hover:text-white transition duration-300">Home</a>
-                            <a href="#projects"
-                               className="text-stone-400 hover:text-white transition duration-300">Projects</a>
-                            <a href="#skills"
-                               className="text-stone-400 hover:text-white transition duration-300">Skills</a>
-                            <a href="#about"
-                               className="text-stone-400 hover:text-white transition duration-300">About</a>
-                            <a href="#contact"
-                               className="text-stone-400 hover:text-white transition duration-300">Contact</a>
-                        </div>
-                    </div>
+                    {/*<div className="mb-6 md:mb-0">*/}
+                    {/*    <div className="flex flex-wrap justify-center md:justify-center space-x-6">*/}
+                    {/*        <a href="#home" className="text-stone-400 hover:text-white transition duration-300">Home</a>*/}
+                    {/*        <a href="#projects"*/}
+                    {/*           className="text-stone-400 hover:text-white transition duration-300">Projects</a>*/}
+                    {/*        <a href="#skills"*/}
+                    {/*           className="text-stone-400 hover:text-white transition duration-300">Skills</a>*/}
+                    {/*        <a href="#about"*/}
+                    {/*           className="text-stone-400 hover:text-white transition duration-300">About</a>*/}
+                    {/*        <a href="#contact"*/}
+                    {/*           className="text-stone-400 hover:text-white transition duration-300">Contact</a>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
 
                     <div className="text-stone-400 text-sm md:text-base mt-4 md:mt-0 text-center md:text-right">
                         &copy; {new Date().getFullYear()} Ranjan Shrestha. All rights reserved.

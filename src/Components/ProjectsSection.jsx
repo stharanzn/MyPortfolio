@@ -16,7 +16,7 @@ export default function ProjectsSection() {
         const fetchProjects = async () => {
             try {
                 var storedData = JSON.parse(window.sessionStorage.getItem("storedData"));
-                const cacheData = false;
+                const cacheData = true;
                 if (storedData !== null && cacheData) {
                     setProjects(storedData);
                 } else {
