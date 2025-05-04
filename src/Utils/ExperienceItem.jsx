@@ -6,12 +6,12 @@ export default function ExperienceItem({ item, alignRight = false }) {
         <div className="timeline-item">
             <div className="timeline-dot"></div>
             <div className="md:grid md:grid-cols-2 md:gap-16">
-                <div className={`mb-8 md:mb-0 ${alignRight ? "md:text-right md:pr-8" : "md:pl-8"}`}>
+                <div className={`mb-8 ml-12 md:mb-0 ${alignRight ? "md:text-right md:pr-8" : "md:pl-8"}`}>
                     <h3 className="text-xl font-bold text-white game-title">{item.title}</h3>
                     <div className="text-amber-500 font-medium">{item.company}</div>
                     <div className="text-stone-400 text-sm mt-1">{item.period}</div>
                 </div>
-                <div className={alignRight ? "md:pl-8" : "md:pr-8"}>
+                <div className={`ml-12 ${alignRight ? "md:pl-8" : "md:pr-8"}`}>
                     <div className="bg-stone-900/80 p-6 rounded-xl border border-stone-700 work-card">
                         <p className="text-stone-300 mb-4">{item.description}</p>
                         <div className="flex flex-wrap gap-2 mb-4">

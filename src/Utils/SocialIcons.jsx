@@ -14,7 +14,7 @@ const SocialIcons = () => {
                 href="https://www.instagram.com/stharanzn"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="social-icon w-12 h-12 rounded-lg bg-stone-800 border border-slate-700 flex items-center justify-center text-white hover:border-amber-500"
+                className="social-icon w-12 h-12 rounded-lg bg-stone-800 border border-stone-700 flex items-center justify-center text-white hover:border-amber-500"
                 aria-label="Instagram"
             >
                 <FaInstagram className="h-6 w-6"/>
@@ -23,7 +23,7 @@ const SocialIcons = () => {
                 href="https://www.linkedin.com/in/stharanzn/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="social-icon w-12 h-12 rounded-lg bg-stone-800 border border-slate-700 flex items-center justify-center text-white hover:border-amber-500"
+                className="social-icon w-12 h-12 rounded-lg bg-stone-800 border border-stone-700 flex items-center justify-center text-white hover:border-amber-500"
                 aria-label="LinkedIn"
             >
                 <FaLinkedin className="h-6 w-6"/>
@@ -32,7 +32,7 @@ const SocialIcons = () => {
                 href="https://github.com/stharanzn"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="social-icon w-12 h-12 rounded-lg bg-stone-800 border border-slate-700 flex items-center justify-center text-white hover:border-amber-500"
+                className="social-icon w-12 h-12 rounded-lg bg-stone-800 border border-stone-700 flex items-center justify-center text-white hover:border-amber-500"
                 aria-label="GitHub"
             >
                 <FaGithub className="h-6 w-6"/>
