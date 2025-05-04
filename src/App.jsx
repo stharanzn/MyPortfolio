@@ -7,6 +7,8 @@ import AboutSection from "./Components/AboutSection.jsx";
 import ContactSection from "./Components/ContactSection.jsx";
 import Footer from "./Components/Footer.jsx";
 import ParticleEffect from "./Utils/ParticleEffect.jsx";
+import WorkExperience from "./Components/WorkExperienceSection.jsx";
+import Achievements from "./Components/Achievements.jsx";
 
 const App = () => {
 
@@ -15,6 +17,7 @@ const App = () => {
         <>
             <Navbar/>
             <HeroSection/>
+            <WorkExperience/>
             <ProjectsSection/>
             <SkillsSection/>
             <AboutSection/>
