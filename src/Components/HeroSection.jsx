@@ -3,6 +3,32 @@ import UnityGame from "../Utils/UnityGame.jsx";
 import FloatingIcons from "../Utils/FloatingIcons.jsx";
 
 const HeroSection = () => {
+
+    function getExperienceLabel(startDate, currentDate = new Date()) {
+        const start = new Date(startDate);
+        const current = new Date(currentDate);
+        console.log(start, current);
+
+        let years = current.getFullYear() - start.getFullYear();
+        const hadAnniversary = (
+            current.getMonth() > start.getMonth() ||
+            (current.getMonth() === start.getMonth() && current.getDate() >= start.getDate())
+        );
+
+        if (!hadAnniversary) {
+            years -= 1;
+        }
+
+        // Get the last anniversary date
+        const lastAnniversary = new Date(start);
+        lastAnniversary.setFullYear(start.getFullYear() + years);
+
+        const msInHalfYear = 1000 * 60 * 60 * 24 * 182.5;
+        const timeSinceAnniversary = current - lastAnniversary;
+
+        return timeSinceAnniversary > msInHalfYear ? `${years}+` : `${years}`;
+    }
+
     return (
         <section
             id="home"
@@ -20,7 +46,7 @@ const HeroSection = () => {
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 game-title">
                         <span className="text-white">Game Developer &</span>
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
-              {" "}Interactive Designer
+              {" "}Web Developer
             </span>
                     </h2>
                     <p className="text-stone-300 text-lg md:text-xl mb-8 max-w-lg">
@@ -28,7 +54,8 @@ const HeroSection = () => {
                         Turning ideas into playable realities.
                     </p>
                     <div className="flex flex-wrap gap-4">
-                        <a href="#projects" className="btn-primary px-8 py-3 hover:text-white rounded-lg font-medium text-white">
+                        <a href="#projects"
+                           className="btn-primary px-8 py-3 hover:text-white rounded-lg font-medium text-white">
                             View Projects
                         </a>
                         <a
@@ -61,8 +88,11 @@ const HeroSection = () => {
                         <div className="text-stone-400">Games Shipped</div>
                     </div>
                     <div className="text-center">
-                        <div className="text-3xl md:text-4xl font-bold text-white mb-2">1+</div>
-                        <div className="text-stone-400">Years Experience</div>
+                        <div
+                            className="text-3xl md:text-4xl font-bold text-white mb-2">{getExperienceLabel('2024-2-26')}</div>
+                        <div
+                            className="text-stone-400">{(getExperienceLabel('2024-2-26').toString() !== "1") ? "Years" : "Year"} Experience
+                        </div>
                     </div>
                 </div>
             </div>

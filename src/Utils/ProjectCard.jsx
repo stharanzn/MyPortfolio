@@ -3,7 +3,6 @@ import Languages from "../Utils/Languages.jsx"
 
 export default function ProjectCard({
                                         dataId,
-                                        onClick,
                                         projectData
                                     }) {
 
