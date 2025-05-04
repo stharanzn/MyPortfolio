@@ -5,7 +5,7 @@ import {
     Monitor,
     Layers,
     PlayCircle,
-    Smartphone, LaptopMinimal, FileQuestion, Gamepad2,
+    Smartphone, LaptopMinimal, FileQuestion, Gamepad2, Plug,
 } from "lucide-react"; // icons from lucide-react
 
 const SkillsSection = () => {
@@ -48,6 +48,7 @@ const SkillsSection = () => {
                     <SkillCard icon={<Gamepad2 size={48}/>} title="Game Development"/>
                     <SkillCard icon={<LaptopMinimal size={48}/>} title="Web Development"/>
                     <SkillCard icon={<FileQuestion size={48}/>} title="Problem Solving"/>
+                    <SkillCard icon={<Plug size={48}/>} title="Unity WebGL Plugin"/>
                 </div>
             </div>
         </section>

@@ -32,51 +32,52 @@ const ContactSection = () => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                {/*<div className="grid grid-cols-1 md:grid-cols-2 gap-12">*/}
+                <div className="flex justify-center items-center">
                     {/* Contact Form */}
-                    <div className="bg-stone-900 rounded-xl p-8 border border-stone-700">
-                        <h3 className="text-xl font-bold text-white mb-6 game-title">Send Me a Message</h3>
-                        <form onSubmit={handleSubmit} className="space-y-6" id="contact-form">
-                            {["name", "email", "subject", "message"].map((field) => (
-                                <div key={field}>
-                                    <label
-                                        htmlFor={field}
-                                        className="block text-sm font-medium text-stone-400 mb-2 capitalize"
-                                    >
-                                        {field === "message" ? "Message" : `Your ${field}`}
-                                    </label>
-                                    {field === "message" ? (
-                                        <textarea
-                                            id={field}
-                                            rows="5"
-                                            className="contact-input w-full px-4 py-3 rounded-lg text-white bg-stone-800 border border-slate-700"
-                                            placeholder="Tell me about your project..."
-                                            value={form[field]}
-                                            onChange={handleChange}
-                                        />
-                                    ) : (
-                                        <input
-                                            type={field === "email" ? "email" : "text"}
-                                            id={field}
-                                            className="contact-input w-full px-4 py-3 rounded-lg text-white bg-stone-800 border border-slate-700"
-                                            placeholder={
-                                                field === "name"
-                                                    ? "John Doe"
-                                                    : field === "email"
-                                                        ? "john@example.com"
-                                                        : "Project Inquiry"
-                                            }
-                                            value={form[field]}
-                                            onChange={handleChange}
-                                        />
-                                    )}
-                                </div>
-                            ))}
-                            <button type="submit" className="btn-primary w-full px-8 py-3 rounded-lg font-medium text-white bg-red-600 hover:bg-red-700">
-                                Send Message
-                            </button>
-                        </form>
-                    </div>
+                    {/*<div className="bg-stone-900 rounded-xl p-8 border border-stone-700">*/}
+                    {/*    <h3 className="text-xl font-bold text-white mb-6 game-title">Send Me a Message</h3>*/}
+                    {/*    <form onSubmit={handleSubmit} className="space-y-6" id="contact-form">*/}
+                    {/*        {["name", "email", "subject", "message"].map((field) => (*/}
+                    {/*            <div key={field}>*/}
+                    {/*                <label*/}
+                    {/*                    htmlFor={field}*/}
+                    {/*                    className="block text-sm font-medium text-stone-400 mb-2 capitalize"*/}
+                    {/*                >*/}
+                    {/*                    {field === "message" ? "Message" : `Your ${field}`}*/}
+                    {/*                </label>*/}
+                    {/*                {field === "message" ? (*/}
+                    {/*                    <textarea*/}
+                    {/*                        id={field}*/}
+                    {/*                        rows="5"*/}
+                    {/*                        className="contact-input w-full px-4 py-3 rounded-lg text-white bg-stone-800 border border-slate-700"*/}
+                    {/*                        placeholder="Tell me about your project..."*/}
+                    {/*                        value={form[field]}*/}
+                    {/*                        onChange={handleChange}*/}
+                    {/*                    />*/}
+                    {/*                ) : (*/}
+                    {/*                    <input*/}
+                    {/*                        type={field === "email" ? "email" : "text"}*/}
+                    {/*                        id={field}*/}
+                    {/*                        className="contact-input w-full px-4 py-3 rounded-lg text-white bg-stone-800 border border-slate-700"*/}
+                    {/*                        placeholder={*/}
+                    {/*                            field === "name"*/}
+                    {/*                                ? "John Doe"*/}
+                    {/*                                : field === "email"*/}
+                    {/*                                    ? "john@example.com"*/}
+                    {/*                                    : "Project Inquiry"*/}
+                    {/*                        }*/}
+                    {/*                        value={form[field]}*/}
+                    {/*                        onChange={handleChange}*/}
+                    {/*                    />*/}
+                    {/*                )}*/}
+                    {/*            </div>*/}
+                    {/*        ))}*/}
+                    {/*        <button type="submit" className="btn-primary w-full px-8 py-3 rounded-lg font-medium text-white bg-red-600 hover:bg-red-700">*/}
+                    {/*            Send Message*/}
+                    {/*        </button>*/}
+                    {/*    </form>*/}
+                    {/*</div>*/}
 
                     {/* Contact Info */}
                     <div>
@@ -120,7 +121,7 @@ const ContactSection = () => {
                         </div>
 
                         {/* Social Media */}
-                        <div className="mt-12">
+                        <div className="mt-12 flex flex-col justify-center items-center">
                             <h3 className="text-xl font-bold text-white mb-6 game-title">Follow Me</h3>
                             <div className="flex space-x-4">
                                 <SocialIcons/>
