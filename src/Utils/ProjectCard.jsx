@@ -10,10 +10,17 @@ export default function ProjectCard({
         <div className="game-card bg-[rgb(41,37,36)] rounded-xl overflow-hidden border border-stone-700">
             <div className={`h-48 bg-gradient-to-br from-red-600 to-amber-800 relative overflow-hidden`}>
                 <div className="absolute inset-0 flex items-center justify-center">
-                    {/*<PlayCircle className="h-20 w-20 text-white/80" />*/}
-                    <img className="project-image w-full h-full"
-                         src={`https://raw.githubusercontent.com/${projectData.full_name}/${projectData.default_branch}/ProjectImage.png`}
-                         alt="project logo"/>
+                    {(projectData.default_branch !== undefined || false) ? (<>
+                            <img className="project-image w-full h-full"
+                                 src={`https://raw.githubusercontent.com/${projectData.full_name}/${projectData.default_branch}/ProjectImage.png`}
+                                 alt="project logo"/></>) :
+                        (<>
+                            <img className="project-image w-full h-full"
+                                 src={projectData.image}
+                                 style={{objectFit: "cover"}}
+                                 alt="project logo"/>
+                        </>)}
+
                 </div>
                 {/*<div className="absolute top-3 left-3 bg-black/50 rounded-lg px-3 py-1 text-xs text-white">*/}
                 {/*    {category}*/}
@@ -23,21 +30,29 @@ export default function ProjectCard({
                 <h3 className="text-xl font-bold text-white mb-2 game-title">{projectData.name}</h3>
                 <p className="text-stone-400 mb-4">{projectData.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                    <Languages prop={{"repoName": projectData.name}}/>
+                    {projectData.default_branch !== undefined ? (
+                            <Languages prop={{"repoName": projectData.name}}/>
+                        ) :
+                        (<>
+                            <Languages prop={projectData.languages}/>
+                        </>)
+                    }
                     {/*        {tags.map((tag, idx) => (*/}
                     {/*            <span key={idx} className="text-xs bg-red-900/50 text-red-300 px-2 py-1 rounded">*/}
                     {/*  {tag}*/}
                     {/*</span>*/}
                     {/*        ))}*/}
                 </div>
-                <a href={projectData.html_url}
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="view-project text-sm text-red-400 hover:text-red-300 font-medium flex items-center"
-                   data-id={dataId}>
-                    View Github Repo
-                    <ArrowRight className="h-4 w-4 ml-1"/>
-                </a>
+                {projectData?.html_url && (
+                    <a href={projectData.html_url}
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       className="view-project text-sm text-red-400 hover:text-red-300 font-medium flex items-center"
+                       data-id={dataId}>
+                        View Github Repo
+                        <ArrowRight className="h-4 w-4 ml-1"/>
+                    </a>
+                )}
             </div>
         </div>
     );

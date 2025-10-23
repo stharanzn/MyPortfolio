@@ -18,7 +18,8 @@ const App = () => {
             <Navbar/>
             <HeroSection/>
             <WorkExperience/>
-            <ProjectsSection/>
+            {/*<ProjectsSection sectionID={"projects"}/>*/}
+            <ProjectsSection />
             <SkillsSection/>
             <AboutSection/>
             <ContactSection/>

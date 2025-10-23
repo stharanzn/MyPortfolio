@@ -1,6 +1,20 @@
 import ProjectCard from "../Utils/ProjectCard.jsx";
 import {useEffect, useState} from "react";
 
+import AmazonCardBg from "../assets/AmazonPic.jpg"
+
+const amazonProjectData = {
+    "image": AmazonCardBg,
+    "name": "Freelance at Amazon",
+    "description": `I was invited to create animations for Amazon, starting with a small gift box project. Impressed 
+    by my work, Amazon expanded the scope and invited me to collaborate onsite at their Bangalore offices. During 
+    this time, I worked closely with Ankit Prajapati, a senior designer at Amazon, and collaborated with Amazon's 
+    development team to streamline the animation integration process. This experience provided valuable insights 
+    and professional growth in animation and design workflows. Although this project was not directly related to my 
+    major skills, but it was an amazing experience.`,
+    "languages": ["Figma", "Lottie Files", "Lottie Lab"]
+}
+
 export default function ProjectsSection() {
 
     const defaultVisibleCount = 3;
@@ -13,38 +27,44 @@ export default function ProjectsSection() {
     useEffect(() => {
 
 
-        const fetchProjects = async () => {
-            try {
-                var storedData = JSON.parse(window.sessionStorage.getItem("storedData"));
-                const cacheData = true;
-                if (storedData !== null && cacheData) {
-                    setProjects(storedData);
-                } else {
-                    const response = await fetch('https://api.github.com/users/stharanzn/repos', {});
-                    if (response.ok) {
-                        const data = await response.json();
-                        let filteredProjects = [];
-                        data.map((project) => {
-                            if (projsToShow.includes(project.name)) {
-                                filteredProjects.push(project);
-                            }
-                        })
-                        window.sessionStorage.setItem("storedData", JSON.stringify(filteredProjects));
-                        setProjects(filteredProjects);
+            const fetchProjects = async () => {
+                    try {
+                        var storedData = JSON.parse(window.sessionStorage.getItem("storedData"));
+                        const cacheData = true;
+                        if (storedData !== null && cacheData) {
+                            console.log("Loading cached data");
+                            setProjects(storedData);
+                        } else {
+                            const response = await fetch('https://api.github.com/users/stharanzn/repos', {});
+                            if (response.ok) {
+                                const data = await response.json();
+                                let filteredProjects = [];
+                                filteredProjects.push(amazonProjectData);
+                                data.map((project) => {
+                                    if (projsToShow.includes(project.name)) {
+                                        filteredProjects.push(project);
+                                    }
+                                })
+                                window.sessionStorage.setItem("storedData", JSON.stringify(filteredProjects));
+                                setProjects(filteredProjects);
 
-                    } else {
-                        console.error('Failed to fetch project data');
+                            } else {
+                                console.error('Failed to fetch project data');
+                            }
+                        }
+
+
+                    } catch
+                        (error) {
+                        console.error('Error:', error);
                     }
                 }
+            ;
 
-
-            } catch (error) {
-                console.error('Error:', error);
-            }
-        };
-
-        fetchProjects();
-    }, []);
+            fetchProjects();
+        }, []
+    )
+    ;
 
     const handleLoadMore = () => setVisibleCount(projects.length);
     const handleHideProjects = () => setVisibleCount(defaultVisibleCount);
@@ -57,15 +77,16 @@ export default function ProjectsSection() {
                         Featured <span className="text-amber-500">Projects</span>
                     </h2>
                     <p className="text-stone-400 max-w-2xl mx-auto">
-                        Explore my portfolio of games and interactive experiences that push the boundaries of gameplay
+                        Explore my portfolio of games and interactive experiences that push the boundaries of
+                        gameplay
                         and storytelling.
                     </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {projects.slice(0, visibleCount).map((project) => (
+                    {projects.slice(0, visibleCount).map((project, idx) => (
                         <ProjectCard
-                            key={project.id}
+                            key={idx}
                             projectData={project}
                         />
                     ))}

@@ -80,21 +80,21 @@ const HeroSection = () => {
             </div>
 
             {/* Stats */}
-            <div className="container mx-auto mt-16 relative z-10">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
-                    <div className="text-center">
-                        <div className="text-3xl md:text-4xl font-bold text-white mb-2">20+</div>
-                        <div className="text-stone-400">Games Shipped</div>
-                    </div>
-                    <div className="text-center">
-                        <div
-                            className="text-3xl md:text-4xl font-bold text-white mb-2">{getExperienceLabel('2024-2-26')}</div>
-                        <div
-                            className="text-stone-400">{(getExperienceLabel('2024-2-26').toString() !== "1") ? "Years" : "Year"} Experience
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {/*<div className="container mx-auto mt-16 relative z-10">*/}
+            {/*    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">*/}
+            {/*        <div className="text-center">*/}
+            {/*            <div className="text-3xl md:text-4xl font-bold text-white mb-2">20+</div>*/}
+            {/*            <div className="text-stone-400">Games Shipped</div>*/}
+            {/*        </div>*/}
+            {/*        <div className="text-center">*/}
+            {/*            <div*/}
+            {/*                className="text-3xl md:text-4xl font-bold text-white mb-2">{getExperienceLabel('2024-2-26')}</div>*/}
+            {/*            <div*/}
+            {/*                className="text-stone-400">{(getExperienceLabel('2024-2-26').toString() !== "1") ? "Years" : "Year"} Experience*/}
+            {/*            </div>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
         </section>
     );
 };

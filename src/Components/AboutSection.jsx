@@ -41,7 +41,9 @@ const AboutText = () => (
                 Get In Touch
             </a>
             <a
-                href="#"
+                href="https://firebasestorage.googleapis.com/v0/b/sharanz.appspot.com/o/RanjanShrestha_Resume.pdf?alt=media&token=b5e20497-0cce-4d6f-8d2c-ae2fa07f664b"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-3 rounded-lg font-medium text-white border border-amber-500 hover:bg-amber-500/20 hover:text-white transition duration-300"
             >
                 Download Resume
