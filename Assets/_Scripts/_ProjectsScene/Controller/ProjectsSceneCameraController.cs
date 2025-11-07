@@ -44,17 +44,16 @@ namespace Portfolio.Projects.Controllers
 
         private void CheckCameraInput()
         {
-            CameraInput cameraInput = new();
-
+            CameraInput _cameraInput = new();
             if (_cameraInputActions.Camera.PointerDown.IsPressed())
             {
-                cameraInput.Pan = _cameraInputActions.Camera.Pan.ReadValue<Vector2>();
+                _cameraInput.Pan = _cameraInputActions.Camera.Pan.ReadValue<Vector2>();
             }
 
-            cameraInput.Zoom = _cameraInputActions.Camera.Zoom.ReadValue<float>();
+            _cameraInput.Zoom = _cameraInputActions.Camera.Zoom.ReadValue<float>();
 
-            PanCamera(cameraInput);
-            ZoomCamera(cameraInput);
+            PanCamera(_cameraInput);
+            ZoomCamera(_cameraInput);
         }
 
         private void ZoomCamera(CameraInput cameraInput)

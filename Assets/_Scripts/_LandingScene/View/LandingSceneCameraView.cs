@@ -1,11 +1,9 @@
 using Common;
-using DG.Tweening;
-using Portfolio.LandingScene.Controller;
 using UnityEngine;
 
-namespace Portfolio.LandingScene.View
+namespace Portfolio.View
 {
-    public class LandingSceneGameView : EntityView
+    public class LandingSceneCameraView : EntityView
     {
         #region Inspector Variables
         #endregion Inspector Variables
@@ -22,12 +20,12 @@ namespace Portfolio.LandingScene.View
         #region Public Methods
         public override void OnGameStart()
         {
-
+            
         }
 
         public override void OnGameOver()
         {
-
+            
         }
         #endregion Public Methods
     }
