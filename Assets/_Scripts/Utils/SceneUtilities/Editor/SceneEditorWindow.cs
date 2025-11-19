@@ -7,7 +7,7 @@ public class SceneEditorWindow : EditorWindow
 {
     private Vector2 scroll;
 
-    [MenuItem("Tools/Scenes Switcher &#S")]
+    [MenuItem("Tool/Scenes Switcher &#S")]
     public static void ShowWindow()
     {
         SceneEditorWindow window = GetWindow<SceneEditorWindow>();

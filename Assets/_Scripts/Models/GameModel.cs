@@ -1,5 +1,6 @@
 using Common;
 using UnityEngine;
+using UnityEngine.Video;
 
 namespace Portfolio.Model
 {
@@ -7,5 +8,15 @@ namespace Portfolio.Model
     {
         INACTIVE,
         ACTIVE
+    }
+
+    [System.Serializable]
+    public struct ProjectDisplayData
+    {
+        public string ProjectName;
+        public string ProjectDescription;
+        public Sprite ProjectIcon;
+        public string ProjectVideoUrl;
+        public string CTALink;
     }
 }

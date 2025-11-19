@@ -120,6 +120,15 @@ namespace Portfolio.InputActions
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PointerPosition"",
+                    ""type"": ""Value"",
+                    ""id"": ""a46c3df5-d7f3-4f21-8677-5f901f54d30f"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -155,6 +164,17 @@ namespace Portfolio.InputActions
                     ""action"": ""Zoom"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""93de90be-56bd-4463-88e4-f327454f45a1"",
+                    ""path"": ""<Pointer>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PointerPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -166,6 +186,7 @@ namespace Portfolio.InputActions
             m_Camera_Pan = m_Camera.FindAction("Pan", throwIfNotFound: true);
             m_Camera_Zoom = m_Camera.FindAction("Zoom", throwIfNotFound: true);
             m_Camera_PointerDown = m_Camera.FindAction("PointerDown", throwIfNotFound: true);
+            m_Camera_PointerPosition = m_Camera.FindAction("PointerPosition", throwIfNotFound: true);
         }
 
         ~@CameraInputActions()
@@ -249,6 +270,7 @@ namespace Portfolio.InputActions
         private readonly InputAction m_Camera_Pan;
         private readonly InputAction m_Camera_Zoom;
         private readonly InputAction m_Camera_PointerDown;
+        private readonly InputAction m_Camera_PointerPosition;
         /// <summary>
         /// Provides access to input actions defined in input action map "Camera".
         /// </summary>
@@ -272,6 +294,10 @@ namespace Portfolio.InputActions
             /// Provides access to the underlying input action "Camera/PointerDown".
             /// </summary>
             public InputAction @PointerDown => m_Wrapper.m_Camera_PointerDown;
+            /// <summary>
+            /// Provides access to the underlying input action "Camera/PointerPosition".
+            /// </summary>
+            public InputAction @PointerPosition => m_Wrapper.m_Camera_PointerPosition;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -307,6 +333,9 @@ namespace Portfolio.InputActions
                 @PointerDown.started += instance.OnPointerDown;
                 @PointerDown.performed += instance.OnPointerDown;
                 @PointerDown.canceled += instance.OnPointerDown;
+                @PointerPosition.started += instance.OnPointerPosition;
+                @PointerPosition.performed += instance.OnPointerPosition;
+                @PointerPosition.canceled += instance.OnPointerPosition;
             }
 
             /// <summary>
@@ -327,6 +356,9 @@ namespace Portfolio.InputActions
                 @PointerDown.started -= instance.OnPointerDown;
                 @PointerDown.performed -= instance.OnPointerDown;
                 @PointerDown.canceled -= instance.OnPointerDown;
+                @PointerPosition.started -= instance.OnPointerPosition;
+                @PointerPosition.performed -= instance.OnPointerPosition;
+                @PointerPosition.canceled -= instance.OnPointerPosition;
             }
 
             /// <summary>
@@ -388,6 +420,13 @@ namespace Portfolio.InputActions
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnPointerDown(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "PointerPosition" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnPointerPosition(InputAction.CallbackContext context);
         }
     }
 }

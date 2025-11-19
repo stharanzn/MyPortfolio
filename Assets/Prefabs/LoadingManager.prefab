@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7298669250286863915
 RectTransform:
   m_ObjectHideFlags: 0
@@ -48,6 +48,9 @@ GameObject:
   - component: {fileID: 1229677797562462039}
   - component: {fileID: 5323521901824427726}
   - component: {fileID: 8957230360801803975}
+  - component: {fileID: 8314205258402057633}
+  - component: {fileID: 1416831815557848341}
+  - component: {fileID: 4522165508133122138}
   m_Layer: 0
   m_Name: BG
   m_TagString: Untagged
@@ -95,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.3537736, b: 0.3537736, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -112,6 +115,50 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8314205258402057633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205219059242493353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f6872b232d761468323f274ec56551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uIElementAnimationSetting:
+    EnterData: {fileID: 1416831815557848341}
+    ExitData: {fileID: 1416831815557848341}
+  animationBehaviour: {fileID: 4522165508133122138}
+--- !u!114 &1416831815557848341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205219059242493353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faf91f2a8e28ce048a18603129a2dc0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Delay: 0
+  UIScaleType: 0
+  UIScaleDuration: 0.5
+  Ease: 3
+--- !u!114 &4522165508133122138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205219059242493353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0351efbe157f01e4a9ad4b285801cd7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5966656268153085552
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,13 +171,15 @@ GameObject:
   - component: {fileID: 5084986521890044464}
   - component: {fileID: 471230404654158214}
   - component: {fileID: 2782995537484855147}
+  - component: {fileID: 86242306193666509}
+  - component: {fileID: 800066903350782655}
   m_Layer: 0
   m_Name: LoadingCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2841695575784688267
 RectTransform:
   m_ObjectHideFlags: 0
@@ -159,7 +208,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5966656268153085552}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -173,7 +222,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!114 &471230404654158214
 MonoBehaviour:
@@ -215,6 +264,34 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &86242306193666509
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5966656268153085552}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &800066903350782655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5966656268153085552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5419d1c51ab374c4ba6196af5ce64871, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiAnimationComponentsArray: []
+  doFade: 1
+  waitForAnimationsToComplete: 0
+  fadeDuration: 0.5
 --- !u!1 &6910322145848727196
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,8 +337,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee6a3a5fa1be2224b9f5983697928b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingCanvas: {fileID: 5084986521890044464}
   loadingBarFill: {fileID: 1348182678423876813}
+  loadingCanvas: {fileID: 800066903350782655}
 --- !u!1 &7069298720190502743
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,7 +20,6 @@ namespace Portfolio.Projects.Controllers
         #region Private Variables
         private Vector3 _requestedPosition;
         private float _requestedZoom;
-        private CameraInputActions _cameraInputActions;
         private float _currentZoom;
         #endregion Private Variables
 
@@ -42,32 +41,20 @@ namespace Portfolio.Projects.Controllers
             primaryCamera.orthographicSize = Mathf.Lerp(primaryCamera.orthographicSize, _requestedZoom, zoomLerpT);
         }
 
-        private void CheckCameraInput()
+
+
+        private void ZoomCamera(float zoom)
         {
-            CameraInput _cameraInput = new();
-            if (_cameraInputActions.Camera.PointerDown.IsPressed())
-            {
-                _cameraInput.Pan = _cameraInputActions.Camera.Pan.ReadValue<Vector2>();
-            }
-
-            _cameraInput.Zoom = _cameraInputActions.Camera.Zoom.ReadValue<float>();
-
-            PanCamera(_cameraInput);
-            ZoomCamera(_cameraInput);
-        }
-
-        private void ZoomCamera(CameraInput cameraInput)
-        {
-            float scrollDelta = cameraInput.Zoom / 100f;
+            float scrollDelta = zoom / 100f;
 
             _requestedZoom -= scrollDelta * cameraZoomSettings.ZoomSpeed;
 
             _requestedZoom = Mathf.Clamp(_requestedZoom, cameraZoomSettings.MinZoom, cameraZoomSettings.MaxZoom);
         }
 
-        private void PanCamera(CameraInput cameraInput)
+        private void PanCamera(Vector2 pan)
         {
-            Vector2 screenDelta = cameraInput.Pan;
+            Vector2 screenDelta = pan;
 
             screenDelta = Vector3.ClampMagnitude(screenDelta, cameraPanSettings.MaxPanSwipeMagnitude);
 
@@ -80,10 +67,21 @@ namespace Portfolio.Projects.Controllers
         #endregion Private Methods
 
         #region Public Methods
+
+        public void SetCameraTarget(Vector3 position)
+        {
+            _requestedPosition = new Vector3(position.x, _requestedPosition.y, position.z);
+        }
+
+        public void OnCameraInput(CameraInput cameraInput)
+        {
+            PanCamera(cameraInput.Pan);
+            ZoomCamera(cameraInput.Zoom);
+        }
+
         public override void OnGameStart()
         {
             primaryCamera.orthographicSize = cameraZoomSettings.MaxZoom;
-            _cameraInputActions = new CameraInputActions();
             _requestedZoom = cameraZoomSettings.defaultZoom;
         }
 
@@ -92,22 +90,7 @@ namespace Portfolio.Projects.Controllers
 
         }
 
-        public void OnGameUpdate()
-        {
-            CheckCameraInput();
-        }
 
-        public void SetCameraControlsState(bool state)
-        {
-            if (state)
-            {
-                _cameraInputActions.Enable();
-            }
-            else
-            {
-                _cameraInputActions.Disable();
-            }
-        }
         #endregion Public Methods
     }
 }
