@@ -47,11 +47,13 @@ namespace Portfolio.Projects.Controllers
             _selectedProjectCliff = projectCliffComponent;
             _selectedProjectCliff.OnCliffSelected();
             GetView<ProjectsSceneGameView>().OnProjectCliffSelected(_selectedProjectCliff);
+            projectsSceneInputController.SetCameraControlsState(false);
             cameraController.SetCameraTarget(_selectedProjectCliff.CameraTargetOnFocus.position);
         }
 
         public void OnProjectCliffDeselected()
         {
+            projectsSceneInputController.SetCameraControlsState(true);
             if (_selectedProjectCliff != null)
             {
                 _selectedProjectCliff.OnCliffDeselected();

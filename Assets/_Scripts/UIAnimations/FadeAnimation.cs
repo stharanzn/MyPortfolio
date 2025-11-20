@@ -15,7 +15,7 @@ namespace UIUtility.Animations
         #endregion
 
         #region Private Variables
-
+        private RectTransform rectTransform;
         #endregion
 
         #region  Public Variables
@@ -23,6 +23,12 @@ namespace UIUtility.Animations
         #endregion
 
         #region Monobehaviour Methods
+
+        private void Start()
+        {
+            rectTransform = GetComponent<RectTransform>();
+        }
+
         private void Reset()
         {
             UIAnimationComponent uIAnimationComponent = GetComponent<UIAnimationComponent>();
@@ -32,7 +38,7 @@ namespace UIUtility.Animations
         #endregion
 
         #region Public Methods
-        public override void Animate(RectTransform rectTransform, UIAnimationContainer animationData, bool isOpening, Action onComplete = null)
+        public override void Animate(UIAnimationContainer animationData, bool isOpening, Action onComplete = null)
         {
             UIFadeDataComponent uIFadeDataComponent = (UIFadeDataComponent)animationData;
             CanvasGroup canvasGroup = rectTransform.GetComponent<CanvasGroup>();

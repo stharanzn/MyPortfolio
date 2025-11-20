@@ -27,6 +27,11 @@ namespace UIUtility.Components
 
         #region Public Methods
 
+        public void OnCanvasClosed()
+        {
+            // animationBehaviour.OnC
+        }
+
         public void SetData(UIAnimationContainer animationContainer, UIAnimationBehaviourComponent uIAnimationBehaviourComponent)
         {
             animationBehaviour = uIAnimationBehaviourComponent;
@@ -42,12 +47,12 @@ namespace UIUtility.Components
 
         public void OnOpen(Action onAnimationComplete)
         {
-            animationBehaviour?.Animate(animationBehaviour.gameObject.GetComponent<RectTransform>(), uIElementAnimationSetting.EnterData, true, onAnimationComplete);
+            animationBehaviour?.Animate(uIElementAnimationSetting.EnterData, true, onAnimationComplete);
         }
 
         public void OnClose(Action onAnimationComplete)
         {
-            animationBehaviour?.Animate(animationBehaviour.gameObject.GetComponent<RectTransform>(), uIElementAnimationSetting.ExitData, false, onAnimationComplete);
+            animationBehaviour?.Animate(uIElementAnimationSetting.ExitData, false, onAnimationComplete);
         }
         #endregion Public Methods
     }

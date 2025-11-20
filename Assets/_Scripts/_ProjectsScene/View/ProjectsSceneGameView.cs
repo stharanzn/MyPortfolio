@@ -1,5 +1,6 @@
 using Common;
 using Portfolio.Projects.Components;
+using Portfolio.Projects.Controllers;
 using UIUtility.Components;
 using UIUtility.Utils;
 using UnityEngine;
@@ -32,6 +33,7 @@ namespace Portfolio.Projects.Views
 
         private void OnCloseProjectDisplayCanvasBtnClicked()
         {
+            GetController<ProjectsSceneGameController>().OnProjectCliffDeselected();
             projectDataDisplayCanvas.CloseCanvas();
         }
         #endregion Private Methods

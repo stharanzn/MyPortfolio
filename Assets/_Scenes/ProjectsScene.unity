@@ -1833,7 +1833,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIScaleDataComponent
   Delay: 0
   uIScaleType: 0
-  uIScaleDuration: 0.5
+  uIScaleDuration: 0.3
   ease: 0
 --- !u!1 &1075029319
 GameObject:
