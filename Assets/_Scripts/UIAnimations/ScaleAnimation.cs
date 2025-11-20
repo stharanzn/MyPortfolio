@@ -16,12 +16,14 @@ namespace UIUtility.Animations
         #region Private Variables
         private Tween animationTween;
         private RectTransform rectTransform;
+        private Vector3 _orignalScale;
         #endregion
 
         #region Monobehavior Methods
         private void Start()
         {
             rectTransform = GetComponent<RectTransform>();
+            _orignalScale = rectTransform.localScale;
         }
 
         private void Reset()
@@ -35,28 +37,20 @@ namespace UIUtility.Animations
         #region Private Methods
         private IEnumerator AnimationCoroutine(UIAnimationContainer animationData, bool isOpening, Action onComplete = null)
         {
-            if (animationTween != null)
-            {
-                animationTween.Kill();
-            }
+            animationTween?.Kill();
 
-            Vector3 startScale = rectTransform.localScale;
-            Vector3 endScale = rectTransform.localScale;
+            Vector3 startScale;
+            Vector3 endScale;
 
             UIScaleDataComponent uiScaleData = (UIScaleDataComponent)animationData;
-
-            switch (uiScaleData.UIScaleType)
+            var offScale = uiScaleData.UIScaleType switch
             {
-                case UIScaleType.ZOOM_IN:
-                    startScale = isOpening ? Vector3.zero : rectTransform.localScale;
-                    endScale = isOpening ? rectTransform.localScale : Vector3.zero;
-                    break;
-
-                case UIScaleType.ZOOM_OUT:
-                    startScale = isOpening ? new Vector3(2f, 2f, 2f) : rectTransform.localScale;
-                    endScale = isOpening ? rectTransform.localScale : new Vector3(2f, 2f, 2f);
-                    break;
-            }
+                UIScaleType.ZOOM_IN => Vector3.zero,
+                UIScaleType.ZOOM_OUT => new Vector3(2f, 2f, 2f),
+                _ => _orignalScale,
+            };
+            startScale = isOpening ? offScale : _orignalScale;
+            endScale = isOpening ? _orignalScale : offScale;
 
             rectTransform.localScale = startScale;
             if (isOpening)
@@ -68,27 +62,9 @@ namespace UIUtility.Animations
                 .SetEase(uiScaleData.Ease)
                 .OnComplete(() =>
                 {
-                    if (!isOpening)
-                    {
-                        rectTransform.localScale = startScale;
-                    }
-                    else
-                    {
-                        rectTransform.localScale = endScale;
-                    }
+
                     onComplete?.Invoke();
                     animationTween = null;
-                })
-                .OnKill(() =>
-                {
-                    if (!isOpening)
-                    {
-                        rectTransform.localScale = startScale;
-                    }
-                    else
-                    {
-                        rectTransform.localScale = endScale;
-                    }
                 });
         }
         #endregion

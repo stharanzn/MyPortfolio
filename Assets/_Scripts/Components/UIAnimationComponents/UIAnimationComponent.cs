@@ -27,11 +27,6 @@ namespace UIUtility.Components
 
         #region Public Methods
 
-        public void OnCanvasClosed()
-        {
-            // animationBehaviour.OnC
-        }
-
         public void SetData(UIAnimationContainer animationContainer, UIAnimationBehaviourComponent uIAnimationBehaviourComponent)
         {
             animationBehaviour = uIAnimationBehaviourComponent;

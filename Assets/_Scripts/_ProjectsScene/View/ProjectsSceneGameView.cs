@@ -34,7 +34,7 @@ namespace Portfolio.Projects.Views
         private void OnCloseProjectDisplayCanvasBtnClicked()
         {
             GetController<ProjectsSceneGameController>().OnProjectCliffDeselected();
-            projectDataDisplayCanvas.CloseCanvas();
+            projectDataDisplayCanvas.CloseCanvas(onCanvasClosed: projectDisplayUIComponent.OnClosed);
         }
         #endregion Private Methods
 
@@ -42,7 +42,7 @@ namespace Portfolio.Projects.Views
 
         public void OnProjectCliffSelected(ProjectCliffComponent projectCliffComponent)
         {
-            projectDataDisplayCanvas.OpenCanvas();
+            projectDataDisplayCanvas.OpenCanvas(onCanvasOpened: projectDisplayUIComponent.OnOpened);
             projectDisplayUIComponent.SetProjectDetails(projectCliffComponent.ProjectDisplayData);
         }
 

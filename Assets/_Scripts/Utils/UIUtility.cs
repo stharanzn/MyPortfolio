@@ -21,7 +21,8 @@ namespace UIUtility.Utils
         #region Private Methods
         private static void OnOpenCurrentCanvas()
         {
-            currentCanvasComponent.OnOpen();
+            _onCanvasOpenStarted?.Invoke();
+            currentCanvasComponent.OnOpen(onAnimationComplete: _onCanvasOpened);
             if (currentCanvasComponent.CanvasType == Models.CanvasType.SCREEN)
             {
                 _previousCanvasCompnent = currentCanvasComponent;
@@ -52,6 +53,8 @@ namespace UIUtility.Utils
             {
                 canvasStack.Add(currentCanvasComponent);
             }
+            _onCanvasOpened = onCanvasOpened;
+            _onCanvasOpenStarted = onCanvasOpenStarted;
             if (_previousCanvasCompnent != null)
             {
                 _previousCanvasCompnent.OnClose(OnOpenCurrentCanvas);
@@ -64,7 +67,7 @@ namespace UIUtility.Utils
 
         public static void CloseCanvas(this UICanvasComponent uICanvasComponent, Action onCanvasClosed = null)
         {
-            uICanvasComponent.OnClose();
+            uICanvasComponent.OnClose(onAnimationsComplete: onCanvasClosed);
         }
 
         public static void OnSceneChange(this UICanvasComponent loadingCanvas)
