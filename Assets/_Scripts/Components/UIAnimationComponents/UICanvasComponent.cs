@@ -84,6 +84,7 @@ namespace UIUtility.Components
         {
             if (!_isComponentInitialized)
             {
+                Debug.LogWarning("UI Canvas component is not initialized.");
                 OnGameStart();
             }
             _closeCount = 0;

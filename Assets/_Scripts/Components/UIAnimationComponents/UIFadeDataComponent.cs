@@ -7,7 +7,7 @@ namespace UIUtility.Components
     public class UIFadeDataComponent : UIAnimationContainer
     {
         #region Inspector Variables
-        [SerializeField] private float fadeDuration;
+        [SerializeField] private float fadeDuration = 0.5f;
         #endregion Inspector Variables
 
         #region Public Variables

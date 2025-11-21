@@ -8,6 +8,7 @@ using Utils;
 namespace UIUtility.Animations
 {
     [RequireComponent(typeof(UIFadeDataComponent), typeof(UIAnimationComponent), typeof(CanvasGroup))]
+    [RequireComponent(typeof(RectTransform))]
     public class FadeAnimation : UIAnimationBehaviourComponent
     {
         #region Inspector Variables
@@ -44,11 +45,11 @@ namespace UIUtility.Animations
             CanvasGroup canvasGroup = rectTransform.GetComponent<CanvasGroup>();
             if (isOpening)
             {
-                canvasGroup.DOFade(1, uIFadeDataComponent.FadeDuration).OnKill(() => { canvasGroup.alpha = 1; });
+                canvasGroup.DOFade(1, uIFadeDataComponent.FadeDuration).OnComplete(() => { onComplete?.Invoke(); }).OnKill(() => { canvasGroup.alpha = 1; });
             }
             else
             {
-                canvasGroup.DOFade(0, uIFadeDataComponent.FadeDuration).OnKill(() => { canvasGroup.alpha = 0; });
+                canvasGroup.DOFade(0, uIFadeDataComponent.FadeDuration).OnComplete(() => { onComplete?.Invoke(); }).OnKill(() => { canvasGroup.alpha = 0; });
             }
         }
 

@@ -8,7 +8,7 @@ namespace UIUtility.Components
     {
         [SerializeField] private UIFlyDirection uIFlyDirection;
         [SerializeField] private float uiFlyDuration = 0.5f;
-        [SerializeField] private Ease ease;
+        [SerializeField] private Ease ease = Ease.OutSine;
 
         public UIFlyDirection UIFlyDirection => uIFlyDirection;
         public float UIFlyInDuration => uiFlyDuration;

@@ -8,7 +8,7 @@ namespace UIUtility.Components
     {
         [SerializeField] private UIScaleType uIScaleType;
         [SerializeField] private float uIScaleDuration = 0.5f;
-        [SerializeField] private Ease ease;
+        [SerializeField] private Ease ease = Ease.OutSine;
 
         public UIScaleType UIScaleType => uIScaleType;
         public float UIScaleDuration => uIScaleDuration;
