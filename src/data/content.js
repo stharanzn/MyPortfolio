@@ -78,6 +78,15 @@ export const customProjects = [
     ]
   },
   {
+    imageUrl: "https://raw.githubusercontent.com/stharanzn/MyPortfolio/dev-v4/src/assets/HondaConfigurator.png",
+    title: "Honda Configurator",
+    description: "This is one of my favourite projects i developed for MyyHashstash. A virtual configurator for Honda bikes which was made using unity3d game engine where the user can configure the bike and see the changes in real time.",
+    techStack: ["Unity 3D", "C#", "Unity Addressables"],
+    links: [
+      { label: "Live Demo", url: "https://www.honda2wheelersindia.com/virtual-showroom/index.html" }
+    ]
+  },
+  {
     imageUrl: "https://raw.githubusercontent.com/stharanzn/FPP-Shooter/main/ProjectImage.png",
     title: "FPP-Shooter",
     description: "This is a FPS multiplayer game which was made using unity3d game engine and photon pun 2 for the multiplayer architecture. This game was meant for me to know about setting up and deploying multiplayer games in unity. ",
