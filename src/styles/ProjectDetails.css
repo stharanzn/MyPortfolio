@@ -1,0 +1,127 @@
+.project-details-page {
+  padding-top: 100px;
+  padding-bottom: 80px;
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-accent);
+  font-weight: 500;
+  transition: var(--transition-fast);
+}
+
+.back-link:hover {
+  transform: translateX(-5px);
+  color: var(--color-primary);
+}
+
+.details-header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.details-title {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text);
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--color-border);
+  background: #000;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+}
+
+.details-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-accent);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.tech-tags-large {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tech-tag-lg {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 8px 16px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+.feature-list, .learning-list {
+  list-style: none;
+}
+
+.feature-list li, .learning-list li {
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 24px;
+  color: var(--color-text-muted);
+}
+
+.feature-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+}
+
+.learning-list li::before {
+  content: '★';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+}
+
+.challenges-text {
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  font-size: 1.05rem;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .details-title {
+    font-size: 2rem;
+  }
+}

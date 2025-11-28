@@ -1,0 +1,27 @@
+:root {
+  /* Colors */
+  --color-primary: #8B0000; /* Dark Red */
+  --color-primary-hover: #a50000;
+  --color-accent: #ff4d4d; /* Bright Red */
+  --color-bg: #0a0a0a; /* Very Dark Gray/Black */
+  --color-surface: #1a1a1a; /* Dark Gray */
+  --color-surface-hover: #252525;
+  --color-text: #e0e0e0; /* Off-white */
+  --color-text-muted: #a0a0a0;
+  --color-border: #333333;
+
+  /* Typography */
+  --font-heading: 'Outfit', 'Inter', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
