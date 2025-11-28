@@ -29,7 +29,7 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-container">
-        <Link to="/#hero" className="logo">
+        <Link to="/#hero" className="navbar-logo">
           <img src="https://raw.githubusercontent.com/stharanzn/MyPortfolio/dev-v2/src/assets/logo.png" alt="logo" />
         </Link>
 

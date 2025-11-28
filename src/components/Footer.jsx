@@ -7,8 +7,15 @@ const Footer = () => {
     <footer className="footer">
       <div className="container footer-container">
         <div className="footer-content">
-          <h3>{profile.name}</h3>
-          <p>{profile.role}</p>
+          <img 
+            src="https://raw.githubusercontent.com/stharanzn/MyPortfolio/dev-v2/src/assets/logo.png" 
+            alt="logo" 
+            className="footer-logo"
+          />
+          <div className="footer-text">
+            <h3>{profile.name}</h3>
+            <p>{profile.role}</p>
+          </div>
         </div>
         <div className="footer-links">
           <a href={profile.contact.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
