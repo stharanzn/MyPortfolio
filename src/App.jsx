@@ -27,10 +27,24 @@ const MainContent = () => {
 
 import ScrollToAnchor from './components/ScrollToAnchor';
 
+import { AnimatePresence } from 'framer-motion';
+import Intro from './components/Intro';
+
+
+
 const App = () => {
+  const [showIntro, setShowIntro] = React.useState(true);
+
   return (
     <Router>
       <div className="app">
+        <AnimatePresence mode="wait">
+          {showIntro && (
+            <Intro key="intro" onComplete={() => setShowIntro(false)} />
+          )}
+        </AnimatePresence>
+        
+        {/* Main Content always rendered behind */}
         <ScrollToAnchor />
         <ParticlesBackground />
         <Layout>
