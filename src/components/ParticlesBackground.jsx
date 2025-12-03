@@ -46,7 +46,11 @@ const ParticlesBackground = () => {
 
     const init = () => {
       particles = [];
-      const numberOfParticles = Math.floor((canvas.width * canvas.height) / 15000);
+      // Reduce density: increase divisor from 15000 to 25000
+      // Cap max particles to prevent lag on high-res screens
+      let numberOfParticles = Math.floor((canvas.width * canvas.height) / 25000);
+      if (numberOfParticles > 80) numberOfParticles = 80; 
+      
       for (let i = 0; i < numberOfParticles; i++) {
         particles.push(new Particle());
       }

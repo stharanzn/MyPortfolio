@@ -30,6 +30,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative; /* Ensure parent has relative positioning */
 }
 
 .visual-shape {
@@ -40,6 +41,19 @@
   animation: morph 8s ease-in-out infinite;
   opacity: 0.8;
   filter: blur(40px);
+  position: relative;
+  z-index: 1;
+}
+
+.lottie-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%; /* Adjust size relative to the blob */
+  height: 120%;
+  z-index: 2; /* Ensure it sits on top of the visual-shape */
+  pointer-events: none; /* Allow clicks to pass through if needed */
 }
 
 .hero-greeting {
@@ -106,22 +120,6 @@
   border-color: var(--color-text);
   background-color: rgba(255, 255, 255, 0.05);
   transform: translateY(-2px);
-}
-
-.hero-visual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.visual-shape {
-  width: 450px;
-  height: 450px;
-  background: linear-gradient(45deg, var(--color-primary), var(--color-surface));
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  animation: morph 8s ease-in-out infinite;
-  opacity: 0.8;
-  filter: blur(40px);
 }
 
 @keyframes morph {
