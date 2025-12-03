@@ -43,6 +43,7 @@
   filter: blur(40px);
   position: relative;
   z-index: 1;
+  will-change: border-radius;
 }
 
 .lottie-container {
@@ -68,6 +69,7 @@
   line-height: 1.1;
   margin-bottom: var(--spacing-xs);
   background: linear-gradient(to right, #fff, #a0a0a0);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
