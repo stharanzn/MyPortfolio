@@ -1,6 +1,43 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { 
+  Gamepad2, 
+  Code, 
+  Atom, 
+  Server, 
+  Users, 
+  Target, 
+  Glasses, 
+  PenTool, 
+  FileVideo, 
+  Database, 
+  Monitor, 
+  Mic, 
+  Box,
+  Cpu,
+  // Github
+} from 'lucide-react';
 import '../styles/ProjectCard.css';
+
+const techIcons = {
+  "Unity 3D": Gamepad2,
+  "C#": Code,
+  "React JS": Atom,
+  "Node JS": Server,
+  "Python": Code,
+  "JavaScript": Code,
+  "Teamwork": Users,
+  "Game Strategies": Target,
+  "Augmented Reality": Glasses,
+  "Figma": PenTool,
+  "Lottie Files": FileVideo,
+  "Lottie Lab": FileVideo,
+  "Firebase": Database,
+  "Electron JS": Monitor,
+  "Agora Voice SDK": Mic,
+  "Unity Addressables": Box,
+  "Photon Pun 2": Cpu
+};
 
 const ProjectCard = ({ project }) => {
 
@@ -34,9 +71,18 @@ const ProjectCard = ({ project }) => {
         <p className="project-desc">{project.description}</p>
         
         <div className="project-tech">
-          {project.techStack.map((tech, index) => (
-            <span key={index} className="tech-tag">{tech}</span>
-          ))}
+          {project.techStack.map((tech, index) => {
+            const IconComponent = techIcons[tech];
+            return (
+              <span key={index} className="tech-tag" title={tech}>
+                {IconComponent ? (
+                  <IconComponent size={16} />
+                ) : (
+                  tech
+                )}
+              </span>
+            );
+          })}
         </div>
 
         {project.recognitions && (
@@ -58,7 +104,9 @@ const ProjectCard = ({ project }) => {
               target="_blank" 
               rel="noopener noreferrer"
               className="btn btn-sm btn-outline"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
             >
+              {/* {link.label === "GitHub" && <Github size={16} />} */}
               {link.label}
             </a>
           ))}
