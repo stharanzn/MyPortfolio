@@ -16,9 +16,6 @@ const MainContent = () => {
   return (
     <>
       <Hero />
-      <About />
-      <Experience />
-      <Skills />
       <Projects />
       <Contact />
     </>
@@ -27,29 +24,17 @@ const MainContent = () => {
 
 import ScrollToAnchor from './components/ScrollToAnchor';
 
-import { AnimatePresence } from 'framer-motion';
-import Intro from './components/Intro';
-
-
-
 const App = () => {
-  const [showIntro, setShowIntro] = React.useState(true);
-
   return (
     <Router>
       <div className="app">
-        <AnimatePresence mode="wait">
-          {showIntro && (
-            <Intro key="intro" onComplete={() => setShowIntro(false)} />
-          )}
-        </AnimatePresence>
-        
         {/* Main Content always rendered behind */}
         <ScrollToAnchor />
         <ParticlesBackground />
         <Layout>
           <Routes>
             <Route path="/" element={<MainContent />} />
+            <Route path="/about" element={<About />} />
             <Route path="/project/:id" element={<ProjectDetails />} />
           </Routes>
         </Layout>

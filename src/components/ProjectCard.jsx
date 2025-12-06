@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   Gamepad2, 
@@ -110,6 +111,15 @@ const ProjectCard = ({ project }) => {
               {link.label}
             </a>
           ))}
+          {project.id && (
+            <Link 
+              to={`/project/${project.id}`}
+              className="btn btn-sm btn-primary"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+            >
+              Know More
+            </Link>
+          )}
         </div>
       </div>
     </motion.div>

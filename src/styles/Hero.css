@@ -163,3 +163,40 @@
     margin: 0 auto var(--spacing-lg);
   }
 }
+
+.hero-companies {
+  margin-top: var(--spacing-xl);
+}
+
+.companies-title {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-sm);
+}
+
+.companies-grid {
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.company-logo {
+  height: 30px;
+  opacity: 0.6;
+  transition: var(--transition-normal);
+  filter: grayscale(100%);
+}
+
+.company-logo:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+@media (max-width: 768px) {
+  .companies-grid {
+    justify-content: center;
+  }
+}
