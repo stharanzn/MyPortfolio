@@ -68,7 +68,7 @@
   font-size: 4.5rem;
   line-height: 1.1;
   margin-bottom: var(--spacing-xs);
-  background: linear-gradient(to right, #fff, #a0a0a0);
+  background: linear-gradient(to right, var(--color-text), var(--color-text-muted));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -103,14 +103,16 @@
 }
 
 .btn-primary {
-  background-color: var(--color-primary);
-  color: #fff;
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
 }
 
 .btn-primary:hover {
-  background-color: var(--color-primary-hover);
+  background-color: var(--color-primary);
+  color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(139, 0, 0, 0.4);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3); /* Blue shadow */
 }
 
 .btn-outline {
@@ -120,7 +122,7 @@
 
 .btn-outline:hover {
   border-color: var(--color-text);
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(0, 0, 0, 0.05);
   transform: translateY(-2px);
 }
 

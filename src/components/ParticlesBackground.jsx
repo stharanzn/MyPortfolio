@@ -25,7 +25,7 @@ const ParticlesBackground = () => {
         this.vx = (Math.random() - 0.5) * 0.5;
         this.vy = (Math.random() - 0.5) * 0.5;
         this.size = Math.random() * 2 + 1;
-        this.color = 'rgba(139, 0, 0, 0.5)'; // Dark Red
+        this.color = 'rgba(37, 99, 235, 0.5)'; // Royal Blue
       }
 
       update() {
@@ -64,7 +64,7 @@ const ParticlesBackground = () => {
           const distance = Math.sqrt(dx * dx + dy * dy);
 
           if (distance < 100) {
-            ctx.strokeStyle = `rgba(139, 0, 0, ${1 - distance / 150})`;
+            ctx.strokeStyle = `rgba(37, 99, 235, ${1 - distance / 150})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);

@@ -13,9 +13,10 @@
 .education-block {
   margin-top: var(--spacing-md);
   padding: var(--spacing-md);
-  background-color: var(--color-surface);
+  background-color: rgba(37, 99, 235, 0.1); /* Light Blue BG - Increased visibility */
   border-left: 4px solid var(--color-primary);
-  border-radius: 0 8px 8px 0;
+  border-radius: 8px;
+  transition: var(--transition-normal);
 }
 
 .education-block h3 {
@@ -30,18 +31,21 @@
 
 .edu-item .year {
   display: inline-block;
-  font-size: 0.9rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 2px 8px;
-  border-radius: 4px;
-  margin-top: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-top: 8px;
 }
 
 .hobbies-block {
   padding: var(--spacing-md);
-  background-color: var(--color-surface);
+  background-color: rgba(37, 99, 235, 0.1); /* Light Blue BG - Increased visibility */
   border-radius: 8px;
   height: fit-content;
+  transition: var(--transition-normal);
 }
 
 .hobbies-block h3 {

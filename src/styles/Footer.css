@@ -1,8 +1,9 @@
 .footer {
-  background-color: var(--color-surface);
+  background-color: #1a1a1a; /* Dark background */
   padding: var(--spacing-lg) 0 var(--spacing-md);
   margin-top: var(--spacing-xl);
-  border-top: 1px solid var(--color-border);
+  border-top: none;
+  color: #fff;
 }
 
 .footer-container {
@@ -22,8 +23,8 @@
 .footer-logo {
   height: 50px;
   width: auto;
-  filter: grayscale(100%);
-  opacity: 0.7;
+  filter: grayscale(100%); /* No invert needed on dark bg */
+  opacity: 0.9;
   transition: var(--transition-normal);
 }
 
@@ -40,10 +41,11 @@
 .footer-content h3 {
   font-size: 1.5rem;
   margin-bottom: var(--spacing-xs);
+  color: #fff;
 }
 
 .footer-content p {
-  color: var(--color-text-muted);
+  color: #a0a0a0; /* Light gray text */
 }
 
 .footer-links {
@@ -52,12 +54,12 @@
 }
 
 .footer-links a {
-  color: var(--color-text);
+  color: #e0e0e0;
   font-weight: 500;
 }
 
 .footer-links a:hover {
-  color: var(--color-primary);
+  color: var(--color-primary); /* Blue accent on hover */
 }
 
 .footer-copyright p {
