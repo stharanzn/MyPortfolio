@@ -95,7 +95,7 @@ const ProjectDetails = () => {
           )}
           
           {/* Requirements Section (Full Width or another row) */}
-          {project.requirements && (
+          {/* {project.requirements && (
              <div className="details-section full-width" style={{ marginTop: '4rem' }}>
                 <h2>Requirements</h2>
                 <ul className="learning-list">
@@ -104,7 +104,7 @@ const ProjectDetails = () => {
                   ))}
                 </ul>
              </div>
-          )}
+          )} */}
         </div>
       </div>
     </motion.div>
