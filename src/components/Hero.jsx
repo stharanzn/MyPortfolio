@@ -48,7 +48,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <p className="companies-title">Trusted by:</p>
+            <p className="companies-title">Enterprise Solutions:</p>
             <div className="companies-grid">
               {companies.map((company, index) => (
                 <img 

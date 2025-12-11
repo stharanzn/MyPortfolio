@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { DotLottiePlayer } from '@dotlottie/react-player';
 import '../styles/ProjectDetails.css';
 
 import { customProjects } from '../data/content';
@@ -23,6 +24,23 @@ const ProjectDetails = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const renderVisual = (content) => {
+    if (!content) return null;
+
+    if (typeof content === 'object' && content.type === 'lottie') {
+      return (
+        <DotLottiePlayer
+          src={content.src}
+          loop
+          autoplay
+        />
+      );
+    }
+    
+    // Default to image (string)
+    return <img src={content} alt="Visual" />;
+  };
 
   return (
     <motion.div 
@@ -47,7 +65,7 @@ const ProjectDetails = () => {
           {/* Section 1: Image Left - Overview Right */}
           <div className="zigzag-row">
             <div className="zigzag-image">
-              <img src={project.gallery?.[0] || project.imageUrl} alt="Overview" />
+              {renderVisual(project.gallery?.[0] || project.imageUrl)}
             </div>
             <div className="zigzag-content">
               <h2>Overview</h2>
@@ -55,10 +73,22 @@ const ProjectDetails = () => {
             </div>
           </div>
 
-          {/* Section 2: Features Left - Image Right */}
+          {/* Section 3: Image Left - Challenges Right */}
           <div className="zigzag-row reverse">
             <div className="zigzag-image">
-               <img src={project.gallery?.[1] || project.imageUrl} alt="Features" />
+               {renderVisual(project.gallery?.[1] || project.imageUrl)}
+            </div>
+            <div className="zigzag-content">
+              <h2>Challenges & Solutions</h2>
+              <p className="challenges-text">{project.challenges}</p>
+            </div>
+          </div>
+
+
+          {/* Section 2: Features Left - Image Right */}
+          <div className="zigzag-row">
+            <div className="zigzag-image">
+               {renderVisual(project.gallery?.[2] || project.imageUrl)}
             </div>
             <div className="zigzag-content">
               <h2>Key Features</h2>
@@ -70,22 +100,12 @@ const ProjectDetails = () => {
             </div>
           </div>
 
-          {/* Section 3: Image Left - Challenges Right */}
-          <div className="zigzag-row">
-            <div className="zigzag-image">
-               <img src={project.gallery?.[2] || project.imageUrl} alt="Challenges" />
-            </div>
-            <div className="zigzag-content">
-              <h2>Challenges & Solutions</h2>
-              <p className="challenges-text">{project.challenges}</p>
-            </div>
-          </div>
-
+          
           {/* Section 4: Outcome Left - Image Right */}
           {project.outcome && (
             <div className="zigzag-row reverse">
               <div className="zigzag-image">
-                 <img src={project.gallery?.[3] || project.imageUrl} alt="Outcome" />
+                 {renderVisual(project.gallery?.[3] || project.imageUrl)}
               </div>
               <div className="zigzag-content">
                 <h2>Outcome & Impact</h2>

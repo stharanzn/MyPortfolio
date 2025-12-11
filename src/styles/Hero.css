@@ -183,19 +183,20 @@
   gap: var(--spacing-lg);
   align-items: center;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .company-logo {
-  height: 30px;
-  opacity: 0.6;
+  height: 51px;
+  opacity: 1;
   transition: var(--transition-normal);
-  filter: grayscale(100%);
+  /* filter: grayscale(100%); */
 }
 
-.company-logo:hover {
+/* .company-logo:hover {
   opacity: 1;
   filter: grayscale(0%);
-}
+} */
 
 @media (max-width: 768px) {
   .companies-grid {

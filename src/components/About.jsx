@@ -8,6 +8,7 @@ import Skills from './Skills';
 const About = () => {
   return (
     <div className="about-page">
+      <Experience />
       <Section id="about" title="About Me" className="about-section">
         <div className="about-grid">
           <div className="about-text">
@@ -35,7 +36,7 @@ const About = () => {
           </div>
         </div>
       </Section>
-      <Experience />
+      
       <Skills />
     </div>
   );

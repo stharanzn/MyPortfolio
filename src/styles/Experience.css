@@ -85,6 +85,7 @@
 }
 
 .timeline-desc li {
+  text-align: left;
   position: relative;
   padding-left: 20px;
   margin-bottom: 8px;
