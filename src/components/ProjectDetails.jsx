@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { DotLottiePlayer } from '@dotlottie/react-player';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import '../styles/ProjectDetails.css';
 
 import { customProjects } from '../data/content';
@@ -30,7 +30,7 @@ const ProjectDetails = () => {
 
     if (typeof content === 'object' && content.type === 'lottie') {
       return (
-        <DotLottiePlayer
+        <DotLottieReact
           src={content.src}
           loop
           autoplay
