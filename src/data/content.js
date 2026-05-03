@@ -34,10 +34,23 @@ export const profile = {
 
 export const experience = [
   {
+    role: "SDE 1 | Game Developer",
+    company: "Felicity Games",
+    location: "Bangalore, India",
+    duration: "04/2026 - Current",
+    description: [
+      "Built and refined casual mobile game features with a strong focus on gameplay feel, retention, and smooth player progression.",
+      "Worked closely with game designers, artists, and product teams to turn ideas, balancing changes, and event requirements into polished in-game experiences.",
+      "Optimized game performance, asset handling, and core systems to ensure stable gameplay across a wide range of Android devices.",
+      "Supported live game updates by implementing new content, fixing gameplay issues quickly, and helping maintain a reliable release cycle.",
+      "Contributed to improving player engagement by iterating on game loops, reward systems, and feature behavior using team feedback and testing insights.",
+    ]
+  },
+  {
     role: "Game Developer",
     company: "MyyHashstash",
     location: "New Delhi, India",
-    duration: "02/2024 - Current",
+    duration: "02/2024 - 04/2026",
     description: [
       "Contributed to marketing and promotional activities, creating compelling content to attract and retain players.",
       "Abided by company specific processes and procedures, complying at all stages of game development.",
@@ -45,7 +58,7 @@ export const experience = [
       "Identified target audience demographic to tailor creative, storylines and game development.",
       "Implemented augmented reality features, pushing the boundaries of traditional gaming experiences.",
     ],
-  },
+  }
 ];
 
 export const skills = [
