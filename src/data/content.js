@@ -28,7 +28,7 @@ export const profile = {
     github: "https://github.com/stharanzn",
   },
   summary:
-    "Dynamic Cross-Platform Game Developer at MyyHashstash, driving user engagement through expertise in Unity 3D/C# development and advanced Web technologies (React JS, Node JS). Extensive experience in the full game development lifecycle, from concept and strategy to network programming (multiplayer systems) and rigorous testing. Dedicated to crafting visually compelling graphics and highly optimized user experiences for broad, geographically diverse audiences.",
+    "Dynamic Cross-Platform Game Developer, driving user engagement through expertise in Unity 3D/C# development and advanced Web technologies (React JS, Node JS). Extensive experience in the full game development lifecycle, from concept and strategy to network programming (multiplayer systems) and rigorous testing. Dedicated to crafting visually compelling graphics and highly optimized user experiences for broad, geographically diverse audiences.",
   location: "New Delhi, India",
 };
 
@@ -41,7 +41,7 @@ export const experience = [
     description: [
       "Built and refined casual mobile game features with a strong focus on gameplay feel, retention, and smooth player progression.",
       "Worked closely with game designers, artists, and product teams to turn ideas, balancing changes, and event requirements into polished in-game experiences.",
-      "Optimized game performance, asset handling, and core systems to ensure stable gameplay across a wide range of Android devices.",
+      "Optimized game performance, asset handling, and core systems to ensure stable gameplay across a wide range of mobile devices.",
       "Supported live game updates by implementing new content, fixing gameplay issues quickly, and helping maintain a reliable release cycle.",
       "Contributed to improving player engagement by iterating on game loops, reward systems, and feature behavior using team feedback and testing insights.",
     ]
@@ -68,7 +68,7 @@ export const skills = [
   "Node JS",
   "Python",
   "JavaScript",
-  "Teamwork",
+  "X-Code",
   "Game Strategies",
   "Augmented Reality",
 ];
